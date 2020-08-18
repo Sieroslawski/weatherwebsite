@@ -1,5 +1,5 @@
 # Weather website
-A full weather website I built to practice interacting with APIs
+A full weather website I built to practice interacting with APIs(openweather)
 
 * ## Current Weather tab
   * Displays detailed information for the day and provides an overview of the next 12 hours
