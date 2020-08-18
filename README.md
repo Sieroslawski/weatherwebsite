@@ -1,5 +1,5 @@
 # Weather website
-A full weather website I built to practice interacting with APIs(openweather)
+A detailed weather website I built to practice interacting with Openweathermap's API
 
 * ## Current Weather tab
   * Displays detailed information for the day and provides an overview of the next 12 hours
@@ -7,7 +7,7 @@ A full weather website I built to practice interacting with APIs(openweather)
 ![Current Weather](https://github.com/Sieroslawski/weatherwebsite/blob/master/weather1.JPG)
 
 * ## 7 Day Weather tab
-  * Displays detailed information for the next 7 days and a written overview of the next 7 days as well
+  * Displays detailed information for the next 7 days and a written overview in the collapsible button
   
 ![Current Weather](https://github.com/Sieroslawski/weatherwebsite/blob/master/weather2.JPG)
 
