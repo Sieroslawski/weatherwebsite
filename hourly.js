@@ -1,7 +1,7 @@
 //Instance variables
 const KELVIN = 273;
 //API Key
-const key = "78f7c460c7f227f76b17ca9bd4c2b57f";
+const key = "https://openweathermap.org";
 
 //Select elements for 5 day / 3 hour forecast
 const convertButtonElement = document.querySelector('.convertButton');
