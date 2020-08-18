@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h2 id="header-title">Weather App - Javascript</h2>
+    <div class="topnav">
+        <a href="hourly.html">48 Hour Forecast</a>
+        <a href="index.html">Current Weather</a>
+        <a href="sevenday.html">7 Day Weather</a>
+    </div>
+    <link rel="stylesheet" href="font/Rimouski.css">
+    <link rel="stylesheet" href="hourlystyle.css">
+</head>
+
+<body>
+    <div class="hourlylocation">
+        <p class="forecast">48 Hour Forecast - </p>
+        <button class="convertButton" onclick="convertBetweenImperialAndMetric()">Convert to imperial</button>
+
+    </div>
+
+    <div class="notification"></div>
+    <table class="table table-striped">
+        <tr>
+            <th colspan="1" class="top" style="width: 15%">Date / Time</th>
+            <th colspan="1" class="top" style="width: 10%">Temperature</th>
+            <th colspan="1" class="top" style="width: 25%">Weather Conditions</th>
+            <th colspan="1" class="top" style="width: 15%">Humidity</th>
+            <th colspan="1" class="top" style="width: 15%">Wind</th>
+        </tr>
+        <tbody id="main-table">
+            <!-- Table appends here-->
+        </tbody>
+    </table>
+    <script src="hourly.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</body>
+
+</html>

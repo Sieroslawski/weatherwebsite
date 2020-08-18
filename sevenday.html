@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h2 id="header-title">Weather App - Javascript</h2>
+    <div class="topnav">
+        <a href="hourly.html">48 Hour Forecast</a>
+        <a href="index.html">Current Weather</a>
+        <a href="sevenday.html">7 Day Weather</a>
+    </div>
+    <link rel="stylesheet" href="font/Rimouski.css">
+    <link rel="stylesheet" href="sevendaystyle.css">
+</head>
+
+<body>
+    <div class="dailylocation">
+        <p class="forecast">7 Day Forecast - </p>
+        <button class="convertButton" onclick="convertBetweenImperialAndMetric()">Convert to imperial</button>
+    </div>
+    <table class="table">
+
+        <tbody id="myTable">
+            <!-- Table appends here-->
+        </tbody>
+    </table>
+
+    <button type="button" class="collapsible" id="caret"><b>▶ View issued forecast</b></button>
+    <div class="content">
+        <table class="bottom-table">
+            <tbody class="table-body">
+            <!-- Bottom table appends here-->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="sevenday.js"></script>
+
+</body>
+
+</html>
