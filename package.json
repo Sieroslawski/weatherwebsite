@@ -1,0 +1,22 @@
+{
+  "name": "weatherwebsite",
+  "version": "1.0.0",
+  "description": "a weather website",
+  "main": "app.js",  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sieroslawski/weatherwebsite.git"
+  },
+  "author": "adrian sieroslawski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sieroslawski/weatherwebsite/issues"
+  },
+  "homepage": "https://github.com/Sieroslawski/weatherwebsite#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  },
+}

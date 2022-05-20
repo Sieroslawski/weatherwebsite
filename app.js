@@ -1,7 +1,9 @@
 //Instance variables
+import API_KEY from './apikey.js';
+
 const KELVIN = 273;
 //API Key
-const key = "https://openweathermap.org";
+const key = API_KEY;
 
 //Select elements for OneCall / 5 Day forcast
 const locationElement = document.querySelector('.forecast');

@@ -1,7 +1,8 @@
 //Instance variables
+import API_KEY from './apikey.js';
 const KELVIN = 273;
 //API Key
-const key = "https://openweathermap.org";
+const key = API_KEY;
 
 //Select elements for 5 day / 3 hour forecast
 const convertButtonElement = document.querySelector('.convertButton');
