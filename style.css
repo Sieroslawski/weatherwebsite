@@ -3,48 +3,60 @@
     font-family: "Rimouski";    
 }
 
-html {
-  overflow-y: scroll;
-}
+
 
 body {
   background-color: #ff9d00;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fa8c1a' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f37c27' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23eb6d30' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e05f38' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d4523d' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23c64742' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23b83c45' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23a83346' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23972c47' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23862646' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23742143' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23631c3f' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%2352183a' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23411434' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%2331102c' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23230b23' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%2317001a' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
     
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
 
 #header-title {
-  margin-left: 712px!important;
   padding: 20px!important;
   font-size: 2em!important;
-
   background: -webkit-linear-gradient(rgb(92, 204, 248), rgb(39, 148, 199));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900!important;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   
 }
 
 .topnav {
- display: flex;
- justify-content: space-between;
- align-items: center;   
- padding-left: 15em;
- padding-right: 15em;
- margin-right: 10px;
- margin-left: 10px;   
- background-color: #FFF;
- opacity: 0.75;
- font-size: 1.3em;   
- border: 2px solid black;
- border-radius: 5px;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 10px 6px 20px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #FFF;
+  opacity: 0.75;
+  font-size: 1.3em;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 10px 6px 20px 0 rgb(0 0 0 / 30%);
+  flex-wrap: wrap;
+  width: 80%;
 }
 
 .topnav:hover {
@@ -79,10 +91,7 @@ a:hover {
     font-size: 25px;
 }
 /* ||BUTTONS AND UTILITIES */
-.convertButton {
-  float: right;    
-  margin-right: 10px;
-  margin-top:-51px;
+.convertButton { 
   width: 175px;
   height: 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -118,16 +127,18 @@ a:hover {
 
 .weather-data {
     border-collapse: collapse;
-    padding:5px;
-    width: 1140px;
-    height: 290px;
-    margin-left: 381px;
+    padding:5px;  
     margin-top: 50px;
     background-color: #FFF;
     opacity: 0.75;
-    border: 2px solid black!important;
-    border-radius: 2%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 10px 6px 20px 0 rgba(0, 0, 0, 0.3);    
+    border: 2px solid black!important;    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 10px 6px 20px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;   
 }
 .weather-data th {   
     padding:5px;
@@ -145,16 +156,19 @@ a:hover {
 .currentlocation {
   margin-top: 40px;
   margin-bottom: 40px;
-  margin-left: 382px;
   height: 60px;
-  padding: 10px;    
-  width: 1140px;
+  padding: 10px;
   background-color: rgba(86, 193, 255, 0.856);
   opacity: 0.80;
   border: 2px solid black;
   overflow: visible;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 10px 6px 20px 0 rgba(0, 0, 0, 0.3);   
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 10px 6px 20px 0 rgb(0 0 0 / 30%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 70%;
 }
 
 #rowOne{
