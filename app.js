@@ -48,6 +48,10 @@ function convertBetweenImperialAndMetric() {
     }
 }
 
+window.convertBetweenImperialAndMetric= convertBetweenImperialAndMetric;
+
+
+
 //Convert Unix UTC to PST   
 function convertUTCToPST(time) {
     let dt = new Date(time * 1000);

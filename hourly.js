@@ -64,6 +64,8 @@ function convertBetweenImperialAndMetric() {
     }
 }
 
+window.convertBetweenImperialAndMetric= convertBetweenImperialAndMetric;
+
 
 //Convert Unix UTC to PST   
 function convertUTCToPST(time) {

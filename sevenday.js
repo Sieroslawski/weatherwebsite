@@ -108,6 +108,8 @@ function convertBetweenImperialAndMetric() {
     }
 }
 
+window.convertBetweenImperialAndMetric= convertBetweenImperialAndMetric;
+
 //Convert UTC to date and day
 function convertUTCToPST(time) {
     let dt = new Date(time * 1000);
