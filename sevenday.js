@@ -103,7 +103,7 @@ function convertBetweenImperialAndMetric() {
 
         for (let i = 0; i < 5; i++) {
             document.querySelector("#forecast" + i).innerHTML = `${onecall.description[i]}. High of ${(onecall.max[i].toFixed(0))} ° <span>C</span>.`;
-            document.querySelector("#forecastOne" + i).innerHTML = `${onecall.description[i]}. Low of ${(onecall.min[i].toFixed.toFixed(0))} ° <span>C</span>.`;
+            document.querySelector("#forecastOne" + i).innerHTML = `${onecall.description[i]}. Low of ${(onecall.min[i].toFixed(0))} ° <span>C</span>.`;
         }
     }
 }
