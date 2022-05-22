@@ -122,7 +122,7 @@ function showError(error) {
 
 //Get 5 day / 3 hour data using geolocation
 function getFiveDayforecast(latitude, longitude) {
-    let api = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
+    let api = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
 
     fetch(api)
         .then(function (response) {
