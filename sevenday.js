@@ -29,14 +29,6 @@ function celsiusToFahrenheit(temperature) {
     }
 }
 
-//Convert KM/H to MP/H
-function convertKMhToMPh(speed) {
-    if (speed < 0) {
-        throw "Speed cannot be less than 0";
-    } else {
-        return (speed / 1.609).toFixed(2);
-    }
-}
 
 //Set user's position
 function setPosition(position) {
@@ -55,21 +47,11 @@ function convertBetweenImperialAndMetric() {
     if (metric.innerHTML === "Convert to imperial") {
         metric.innerHTML = "Convert to metric";
 
-        document.querySelector('.day1').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[0]}.png"/><br>${celsiusToFahrenheit(onecall.temp[0]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[0]}%<br>${onecall.description[0]}</td>`;
-        document.querySelector('.day2').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[1]}.png"/><br>${celsiusToFahrenheit(onecall.temp[1]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[1]}%<br>${onecall.description[1]}</td>`;
-        document.querySelector('.day3').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[2]}.png"/><br>${celsiusToFahrenheit(onecall.temp[2]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[2]}%<br>${onecall.description[2]}</td>`;
-        document.querySelector('.day4').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[3]}.png"/><br>${celsiusToFahrenheit(onecall.temp[3]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[3]}%<br>${onecall.description[3]}</td>`;
-        document.querySelector('.day5').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[4]}.png"/><br>${celsiusToFahrenheit(onecall.temp[4]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[4]}%<br>${onecall.description[4]}</td>`;
-        document.querySelector('.day6').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[5]}.png"/><br>${celsiusToFahrenheit(onecall.temp[5]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[5]}%<br>${onecall.description[5]}</td>`;
-        document.querySelector('.day7').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[6]}.png"/><br>${celsiusToFahrenheit(onecall.temp[6]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[6]}%<br>${onecall.description[6]}</td>`;
-
-        document.querySelector('.night1').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[0]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[0]).toFixed(0)} ° <span>F</span><br>${onecall.main[0]}</td>`
-        document.querySelector('.night2').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[1]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[1]).toFixed(0)} ° <span>F</span><br>${onecall.main[1]}</td>`
-        document.querySelector('.night3').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[2]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[2]).toFixed(0)} ° <span>F</span><br>${onecall.main[2]}</td>`
-        document.querySelector('.night4').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[3]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[3]).toFixed(0)} ° <span>F</span><br>${onecall.main[3]}</td>`
-        document.querySelector('.night5').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[4]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[4]).toFixed(0)} ° <span>F</span><br>${onecall.main[4]}</td>`
-        document.querySelector('.night6').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[5]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[5]).toFixed(0)} ° <span>F</span><br>${onecall.main[5]}</td>`
-        document.querySelector('.night7').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[6]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[6]).toFixed(0)} ° <span>F</span><br>${onecall.main[6]}</td>`
+       for(let i = 0; i < 7; i++) {        
+        document.querySelector('.day'+i).innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[i]}.png"/><br>${celsiusToFahrenheit(onecall.temp[i]).toFixed(0)} ° <span>F</span><br><br>Humidity: ${onecall.humidity[i]}%<br>${onecall.description[0]}</td>`;
+        document.querySelector('.night'+i).innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[i]}.png"/><br>${celsiusToFahrenheit(onecall.tempNight[i]).toFixed(0)} ° <span>F</span><br>${onecall.main[i]}</td>`
+       }
+            
 
         document.querySelector('#bottomRowConvert').innerHTML = `${onecall.description[0]}. High of ${celsiusToFahrenheit(onecall.max[0].toFixed(0))} ° <span>F</span>. Humidex of ${celsiusToFahrenheit(onecall.feels[0]).toFixed(0)}. UV index of ${onecall.uvIndex[0]}`
         document.querySelector('#bottomRowConvertTwo').innerHTML = `${onecall.description[0]}. Low of ${celsiusToFahrenheit(onecall.min[0].toFixed(0))} ° <span>F</span>. Humidex of ${celsiusToFahrenheit(onecall.feels[0]).toFixed(0)}. UV index of ${onecall.uvIndex[0]}`;
@@ -82,21 +64,10 @@ function convertBetweenImperialAndMetric() {
     } else {
         metric.innerHTML = "Convert to imperial";
 
-        document.querySelector('.day1').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[0]}.png"/><br>${(onecall.temp[0]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[0]}%<br>${onecall.description[0]}</td>`;
-        document.querySelector('.day2').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[1]}.png"/><br>${(onecall.temp[1]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[1]}%<br>${onecall.description[1]}</td>`;
-        document.querySelector('.day3').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[2]}.png"/><br>${(onecall.temp[2]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[2]}%<br>${onecall.description[2]}</td>`;
-        document.querySelector('.day4').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[3]}.png"/><br>${(onecall.temp[3]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[3]}%<br>${onecall.description[3]}</td>`;
-        document.querySelector('.day5').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[4]}.png"/><br>${(onecall.temp[4]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[4]}%<br>${onecall.description[4]}</td>`;
-        document.querySelector('.day6').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[5]}.png"/><br>${(onecall.temp[5]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[5]}%<br>${onecall.description[5]}</td>`;
-        document.querySelector('.day7').innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[6]}.png"/><br>${(onecall.temp[6]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[6]}%<br>${onecall.description[6]}</td>`;
-
-        document.querySelector('.night1').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[0]}.png"/><br>${(onecall.tempNight[0]).toFixed(0)} ° <span>C</span><br>${onecall.main[0]}</td>`;
-        document.querySelector('.night2').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[1]}.png"/><br>${(onecall.tempNight[1]).toFixed(0)} ° <span>C</span><br>${onecall.main[1]}</td>`;
-        document.querySelector('.night3').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[2]}.png"/><br>${(onecall.tempNight[2]).toFixed(0)} ° <span>C</span><br>${onecall.main[2]}</td>`;
-        document.querySelector('.night4').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[3]}.png"/><br>${(onecall.tempNight[3]).toFixed(0)} ° <span>C</span><br>${onecall.main[3]}</td>`;
-        document.querySelector('.night5').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[4]}.png"/><br>${(onecall.tempNight[4]).toFixed(0)} ° <span>C</span><br>${onecall.main[4]}</td>`;
-        document.querySelector('.night6').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[5]}.png"/><br>${(onecall.tempNight[5]).toFixed(0)} ° <span>C</span><br>${onecall.main[5]}</td>`;
-        document.querySelector('.night7').innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[6]}.png"/><br>${(onecall.tempNight[6]).toFixed(0)} ° <span>C</span><br>${onecall.main[6]}</td>`;
+        for(let i = 0; i < 7; i++) {
+            document.querySelector('.day'+i).innerHTML = `<img class="hourlyweather-icon" src="icons/${onecall.weather[i]}.png"/><br>${(onecall.temp[i]).toFixed(0)} ° <span>C</span><br><br>Humidity: ${onecall.humidity[0]}%<br>${onecall.description[i]}</td>`;
+            document.querySelector('.night'+i).innerHTML = `<img class="hourlyweather-icon" src="icons-night/${onecall.weather[i]}.png"/><br>${(onecall.tempNight[i]).toFixed(0)} ° <span>C</span><br>${onecall.main[i]}</td>`;
+        }      
 
         document.querySelector('#bottomRowConvert').innerHTML = `${onecall.description[0]}. High of ${(onecall.max[0].toFixed(0))} ° <span>C</span>. Humidex of ${(onecall.feels[0]).toFixed(0)}. UV index of ${onecall.uvIndex[0]}`
         document.querySelector('#bottomRowConvertTwo').innerHTML = `${onecall.description[0]}. Low of ${(onecall.min[0].toFixed(0))} ° <span>C</span>. Humidex of ${(onecall.feels[0]).toFixed(0)}. UV index of ${onecall.uvIndex[0]}`;
@@ -191,56 +162,61 @@ function getWeather(latitude, longitude) {
                 onecall.feels.push(data.daily[i].feels_like.day - KELVIN);
                 onecall.uvIndex.push(data.daily[0].uvi);
                 onecall.min.push(data.daily[i].temp.min - KELVIN);
+            }                                 
+
+          function addDates() {
+              let string = ""
+              for(let i = 0; i <= 6; i++) {
+                string += `<td>${convertUTCToPST(data.daily[i].dt)}</td>`               
             }
+            return string
+          } 
+            
+          function addDayRow() {
+              let string = "";
+              for(let i = 0; i <= 6; i++) {
+                  string += `<td class=${"day"+i}><img class="hourlyweather-icon" src="icons/${data.daily[i].weather[0].icon}.png"/><br>${(data.daily[i].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[i].humidity}%<br>${data.daily[i].weather[0].description}</td>`                  
+              }
+              return string;
+          }
+          
+          function addNightRow() {
+            let string = ""
+            for(let i = 0; i <= 6; i++) {
+              string += ` <td class=${"night"+i}><img class="hourlyweather-icon" src="icons-night/${data.daily[i].weather[0].icon}.png"/><br>${(data.daily[i].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[i].weather[0].main}</td>`              
+          }
+          return string
+          }
+                var row = `<table>
+                <tbody>
+                    <tr style="text-align:center;" class= "dates">
+                    ${addDates()}       	                                      
+                    </tr>
+                    <tr style="text-align:center;">                                
+                    ${addDayRow()}
+                    </tr>                   
+                    <tr style="text-align:center;" class="dates">
+                    <td>Tonight</td>
+                    <td>Night</td>
+                    <td>Night</td>
+                    <td>Night</td>
+                    <td>Night</td>
+                    <td>Night</td>
+                    <td>Night</td>                              
+                    </tr>
+                    <tr style="text-align:center;">
+                    ${addNightRow()}
+                    </tr>     		
+                </tbody>
+              </table>`;
 
-            let row = `<table>
-	                        <tbody>
-		                        <tr style="text-align:center;" class= "dates">
-			                    <td>${convertUTCToPST(data.daily[0].dt)}</td>
-			                    <td>${convertUTCToPST(data.daily[1].dt)}</td>
-			                    <td>${convertUTCToPST(data.daily[2].dt)}</td>
-			                    <td>${convertUTCToPST(data.daily[3].dt)}</td>
-                                <td>${convertUTCToPST(data.daily[4].dt)}</td>
-                                <td>${convertUTCToPST(data.daily[5].dt)}</td>
-                                <td>${convertUTCToPST(data.daily[6].dt)}</td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                <td class=${"day1"}><img class="hourlyweather-icon" src="icons/${data.daily[0].weather[0].icon}.png"/><br>${(data.daily[0].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[0].humidity}%<br>${data.daily[0].weather[0].description}</td>
-                                <td class=${"day2"}><img class="hourlyweather-icon" src="icons/${data.daily[1].weather[0].icon}.png"/><br>${(data.daily[1].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[1].humidity}%<br>${data.daily[1].weather[0].description}</td>
-                                <td class=${"day3"}><img class="hourlyweather-icon" src="icons/${data.daily[2].weather[0].icon}.png"/><br>${(data.daily[2].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[2].humidity}%<br>${data.daily[2].weather[0].description}</td>
-                                <td class=${"day4"}><img class="hourlyweather-icon" src="icons/${data.daily[3].weather[0].icon}.png"/><br>${(data.daily[3].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[3].humidity}%<br>${data.daily[3].weather[0].description}</td>
-                                <td class=${"day5"}><img class="hourlyweather-icon" src="icons/${data.daily[4].weather[0].icon}.png"/><br>${(data.daily[4].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[4].humidity}%<br>${data.daily[4].weather[0].description}</td>
-                                <td class=${"day6"}><img class="hourlyweather-icon" src="icons/${data.daily[5].weather[0].icon}.png"/><br>${(data.daily[5].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[5].humidity}%<br>${data.daily[5].weather[0].description}</td>
-                                <td class=${"day7"}><img class="hourlyweather-icon" src="icons/${data.daily[6].weather[0].icon}.png"/><br>${(data.daily[6].temp.day - KELVIN).toFixed(0)} ° <span>C</span><br><br>Humidity: ${data.daily[6].humidity}%<br>${data.daily[6].weather[0].description}</td>
-                                </tr>
-                                <tr style="text-align:center;" class= "dates">
-                                <td>Tonight</td>
-                                <td>Night</td>
-                                <td>Night</td>
-                                <td>Night</td>
-                                <td>Night</td>
-                                <td>Night</td>
-                                <td>Night</td>                              
-                                </tr>
-                                <tr style="text-align:center;">
-                                <td class=${"night1"}><img class="hourlyweather-icon" src="icons-night/${data.daily[0].weather[0].icon}.png"/><br>${(data.daily[0].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[0].weather[0].main}</td>
-                                <td class=${"night2"}><img class="hourlyweather-icon" src="icons-night/${data.daily[1].weather[0].icon}.png"/><br>${(data.daily[1].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[1].weather[0].main}</td>
-                                <td class=${"night3"}><img class="hourlyweather-icon" src="icons-night/${data.daily[2].weather[0].icon}.png"/><br>${(data.daily[2].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[2].weather[0].main}</td>
-                                <td class=${"night4"}><img class="hourlyweather-icon" src="icons-night/${data.daily[3].weather[0].icon}.png"/><br>${(data.daily[3].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[3].weather[0].main}</td>
-                                <td class=${"night5"}><img class="hourlyweather-icon" src="icons-night/${data.daily[4].weather[0].icon}.png"/><br>${(data.daily[4].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[4].weather[0].main}</td>
-                                <td class=${"night6"}><img class="hourlyweather-icon" src="icons-night/${data.daily[5].weather[0].icon}.png"/><br>${(data.daily[5].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[5].weather[0].main}</td>
-                                <td class=${"night7"}><img class="hourlyweather-icon" src="icons-night/${data.daily[6].weather[0].icon}.png"/><br>${(data.daily[6].temp.night - KELVIN).toFixed(0)} ° <span>C</span><br>${data.daily[6].weather[0].main}</td>
-                                </tr>     		
-	                        </tbody>
-                          </table>`;
-
-            table.innerHTML += row;
+              table.innerHTML += row;                                 
         });
 }
 
 //Get the 5 day weather API to get location - other api doesn't support location
 function getFiveDayforecast(latitude, longitude) {
-    let api = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
+    let api = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
 
     fetch(api)
         .then(function (response) {

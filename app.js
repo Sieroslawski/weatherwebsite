@@ -205,7 +205,7 @@ function getWeather(latitude, longitude) {
 
 //Get the 5 day weather  API to get location - other api doesn't support location
 function getFiveDayForecast(latitude, longitude) {
-    let api = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
+    let api = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
 
     fetch(api)
         .then(function (response) {
